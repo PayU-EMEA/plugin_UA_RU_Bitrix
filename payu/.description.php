@@ -35,13 +35,13 @@ $arPSCorrespondence = array(
 				"DESCR" =>  GetMessage("PEYU_DESC_LU_URL"),
 				"VALUE" => "",
 				"TYPE" => ""
-			),/*
+			),
 	  "PRICE_CURRENCY" => array(
 				"NAME" => GetMessage("PEYU_PRICE_CURRENCY"),
 				"DESCR" =>  GetMessage("PEYU_DESC_PRICE_CURRENCY"),
 				"VALUE" => "CURRENCY",
             	"TYPE" => "ORDER"
-			),*/
+			),
 	  "DEBUG_MODE" => array(
 				"NAME" => GetMessage("PEYU_DEBUG_MODE"),
 				"DESCR" => GetMessage("PEYU_DESC_DEBUG_MODE"),

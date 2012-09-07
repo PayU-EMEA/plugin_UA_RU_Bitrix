@@ -58,6 +58,8 @@ $forSend = array (
           'LANGUAGE' => CSalePaySystemAction::GetParamValue("LANGUAGE"),
           );
 
+if ($forSend['DISCOUNT'] == 0 ) unset( $forSend['DISCOUNT'] );
+
 if ( $backref != "" ) $forSend['BACK_REF'] = $backref;
 
 
@@ -75,20 +77,4 @@ foreach ( $arBasketItems as $val )
 $pay = PayU::getInst()->setOptions( $option )->setData( $forSend )->LU();
   echo $pay;
 
- /* 
-  $forSend += array(
-                    'ORDER_SHIPPING' => $arOrder['PRICE_DELIVERY'], # Shipping cost
-                    'PRICES_CURRENCY' => CSalePaySystemAction::GetParamValue("PRICE_CURRENCY"), # Currency
-                    'DISCOUNT' => $arOrder['DISCOUNT_VALUE']
-                  );
-
-  $PayU->update( $forSend )->debug( CSalePaySystemAction::GetParamValue("DEBUG_MODE") );
-  $PayU->data['LANGUAGE'] = CSalePaySystemAction::GetParamValue("LANGUAGE");
-
-  $backref = CSalePaySystemAction::GetParamValue("BACK_REF");
-  if ( $backref != "" ) $PayU->data['BACK_REF'] = $backref;
-
-
-  $form = $PayU->getForm();
-
-  echo $form;*/
+ 
