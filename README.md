@@ -31,7 +31,10 @@
 
 >6. Сделать платежную систему активной и нажать "Сохранить"
 
+![Скриншот][1]
+
 
 В настройках вашего мерчанта на PayU необходимо указать ссылку возврата(IPN) информации о статусе платежа на страницу `http://yoursite.com/bitrix/tools/payu_result.php`
 
 [bitrixMark]: http://marketplace.1c-bitrix.ru/solutions/payu.payment/
+[1]: https://raw.github.com/PayUUA/Bitrix/master/screenshot.png
