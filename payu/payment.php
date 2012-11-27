@@ -39,7 +39,8 @@ while ($ar_res = $db_res->Fetch())
 $option  = array( 
                 'merchant' => CSalePaySystemAction::GetParamValue("MERCHANT"), 
                 'secretkey' => CSalePaySystemAction::GetParamValue("SECURE_KEY"), 
-                'debug' => CSalePaySystemAction::GetParamValue("DEBUG_MODE") 
+                'debug' => CSalePaySystemAction::GetParamValue("DEBUG_MODE"),
+                'isWinEncode' => true
                 );
 $lu = CSalePaySystemAction::GetParamValue("LU_URL");
 if ( $lu != "" ) $option['luUrl'] = $lu;

@@ -4,9 +4,11 @@ class PayU
 	var $luUrl = "https://secure.payu.ua/order/lu.php", 
 		$button = "<input type='submit'>",
 		$debug = 0,
-		$showinputs = "hidden";
+		$showinputs = "hidden",
+		$isWinEncode = false;
 
 	private static $Inst = false, $merchant, $key;
+	private $isEncode = false;
 
 	private $data = array(), $dataArr = array(), $answer = ""; 
 	private $LUcell = array( 'MERCHANT' => 1, 'ORDER_REF' => 0, 'ORDER_DATE' => 1, 'ORDER_PNAME' => 1, 'ORDER_PGROUP' => 0,
@@ -62,6 +64,7 @@ class PayU
 
 	private function convString($string) 
 	{	
+		if ( $this->isEncode ) $string = iconv("windows-1251", "utf-8",  $string);
 		return mb_strlen($string, '8bit') . $string;
 	}
 
@@ -83,6 +86,7 @@ class PayU
 	public function LU()
 	{	
 		$arr = &$this->dataArr;
+		if (  $this->isWinEncode ) $this->isEncode = true;
 		$arr['MERCHANT'] = self::$merchant;
 		if( !isset($arr['ORDER_DATE']) ) $arr['ORDER_DATE'] = date("Y-m-d H:i:s");
 		$arr['TESTORDER'] = ( $this->debug == 1 ) ? "TRUE" : "FALSE";
