@@ -14,7 +14,7 @@ $dbBasketItems = CSaleBasket::GetList(
           array( "NAME" => "ASC", "ID" => "ASC" ),
           array( "LID" => SITE_ID, "ORDER_ID" => $ORDER_ID ),
           false, false,
-          array("ID", "CALLBACK_FUNC", "MODULE", "PRODUCT_ID", "QUANTITY", "DELAY", "CAN_BUY", "PRICE", "WEIGHT")
+          array("ID", "NAME", "CALLBACK_FUNC", "MODULE", "PRODUCT_ID", "QUANTITY", "DELAY", "CAN_BUY", "PRICE", "WEIGHT")
     );
 
 while ($arItems = $dbBasketItems->Fetch())
